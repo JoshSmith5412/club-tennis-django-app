@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Player</title>
+</head>
+<body>
+
+    <h1>Edit Player</h1>
+
+    <a href="/players/">← Back to Players</a>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <p>
+            Name:<br>
+            <input type="text" name="name" value="{{ player.name }}">
+        </p>
+
+        <p>
+            Email:<br>
+            <input type="email" name="email" value="{{ player.email }}">
+        </p>
+
+        <p>
+            Skill Level:<br>
+            <input type="text" name="skill_level" value="{{ player.skill_level }}">
+        </p>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+</body>
+</html>

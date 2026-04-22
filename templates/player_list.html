@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Club Tennis Players</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f6f8;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #1a237e;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1976d2;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: white;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎾 Club Tennis Players</h1>
+
+    <a href="/">← Back Home</a>
+    <br><br>
+<a href="/add-player/">➕ Add Player</a>
+
+    <ul>
+        {% for player in players %}
+            <li>
+    <strong>{{ player.name }}</strong><br>
+    {{ player.email }}<br>
+    Skill Level: {{ player.skill_level }}<br><br>
+
+    <a href="/edit-player/{{ player.id }}/">✏️ Edit</a> |
+    <a href="/delete-player/{{ player.id }}/">❌ Delete</a>
+</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
